@@ -1,6 +1,6 @@
 <div align="center">
 
-🇬🇧 [English](README.md) · 🇺🇦 **[ Українська ]**
+<a href="README.md"><img src=".github/assets/flags/gb.svg" width="20" height="12" alt="English" valign="middle"></a> [English](README.md) · <a href="README.uk.md"><img src=".github/assets/flags/ua.svg" width="20" height="13" alt="Українська" valign="middle"></a> **[ Українська ]**
 
 # Спільний AI Memory Bank
 
@@ -133,8 +133,8 @@ BR-001: Експорт даних транзакцій (Бізнес-намір:
 
 | Мова | Базовий протокол | Розширення CDIP | Статус |
 | :--- | :--- | :--- | :--- |
-| 🇬🇧 English | [Read the base](MemBankRules.md) | [Read CDIP](MemBankRulesWithCDIP.md) | **3.2 · authoritative** |
-| 🇺🇦 Українська | [Базова специфікація](MemBankRulesUkr.md) | [Розширення CDIP](MemBankRulesWithCDIPUkr.md) | **3.2 · повний переклад** |
+| <img src=".github/assets/flags/gb.svg" width="18" height="11" alt="GB" valign="middle"> English | [Read the base](MemBankRules.md) | [Read CDIP](MemBankRulesWithCDIP.md) | **3.2 · authoritative** |
+| <img src=".github/assets/flags/ua.svg" width="18" height="12" alt="UA" valign="middle"> Українська | [Базова специфікація](MemBankRulesUkr.md) | [Розширення CDIP](MemBankRulesWithCDIPUkr.md) | **3.2 · повний переклад** |
 
 Обидві мовні версії специфікації реалізують **версію 3.2 (07-10-2026)** з форматом дат ISO 8601-2 (`DD-MM-YYYY`). Завжди використовуйте узгоджені версії специфікацій. Англійський варіант залишається авторитетним канонічним першоджерелом.
 
