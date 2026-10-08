@@ -1,6 +1,6 @@
 <div align="center">
 
-🌐 🇬🇧 [English](README.md) · 🇺🇦 **[ Українська ]**
+🇬🇧 [English](README.md) · 🇺🇦 **[ Українська ]**
 
 # Спільний AI Memory Bank
 
