@@ -883,11 +883,11 @@ Dependents and delivery reports consume only published state from an explicitly 
 ```mermaid
 flowchart TD
     A["Blocker detected in Act Mode"] --> B["1. Stop editing source files"]
-    B --> C["2. Preserve evidence and inspect ownership"]
-    C --> D["3. Roll back only if safe; otherwise preserve diff"]
-    D --> E["4. Record Blocked and disposition durably"]
+    B --> C["2. Preserve evidence<br/>and inspect ownership"]
+    C --> D["3. Roll back only if safe;<br/>otherwise preserve diff"]
+    D --> E["4. Record Blocked<br/>and disposition durably"]
     E --> F["5. Switch to Plan Mode"]
-    F --> G["6. Ask developer 1-2 specific questions"]
+    F --> G["6. Ask developer<br/>1-2 specific questions"]
 ```
 
 1. **Stop implementation.** Preserve sanitized error output, relevant diff evidence, and reproduction steps before changing anything.

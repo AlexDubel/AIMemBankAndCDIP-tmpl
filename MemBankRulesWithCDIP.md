@@ -125,7 +125,7 @@ flowchart TD
     subgraph CD["CDIP: requirements and tasks"]
         BR["BR-xxx business requirements"]
         SR["SR-xxx system requirements"]
-        TASK["TASK-xxx work items (status source of truth)"]
+        TASK["TASK-xxx work items<br/>(status source of truth)"]
     end
 
     ACT -->|"points to active"| TASK
