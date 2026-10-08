@@ -148,14 +148,14 @@ BR-001: Експорт даних транзакцій (Бізнес-намір:
 
 ```mermaid
 flowchart LR
-    Agents["AI-агенти та розробник"] --> Adapters["Адаптери під<br/>інструменти"]
-    Adapters --> Entry["AGENTS.md:<br/>версіоване делегування"]
+    Agents["AI-агенти та<br/>розробник"] --> Adapters["Адаптери під<br/>інструменти"]
+    Adapters --> Entry["AGENTS.md:<br/>версіоване<br/>делегування"]
     Entry --> Specs["Повні специфікації<br/>протоколу"]
-    Specs --> Context["Memory Bank:<br/>архітектура, стек, рішення"]
-    Specs --> Work["PLAN або TASK:<br/>схвалення, межі, докази"]
-    Context --> Session["Сфокусована сесія<br/>реалізації"]
+    Specs --> Context["Memory Bank:<br/>архітектура, стек,<br/>рішення"]
+    Specs --> Work["PLAN або TASK:<br/>схвалення, межі,<br/>докази"]
+    Context --> Session["Сфокусована<br/>сесія"]
     Work --> Session
-    Session --> Update["Верифікація та<br/>фіксація результатів"]
+    Session --> Update["Верифікація та<br/>фіксація"]
     Update --> Context
     Update --> Work
     classDef knowledge fill:#dbeafe,stroke:#2563eb,color:#172554
@@ -172,12 +172,12 @@ Memory Bank описує проєкт. Відстежувані робочі е�
 
 ```mermaid
 flowchart TD
-    BR["BR:<br/>Навіщо потрібна ця можливість?"] --> SR["SR:<br/>Що повинен гарантувати компонент?"]
-    SR --> Task["TASK:<br/>Затверджені межі, залежності,<br/>та прив'язка критеріїв"]
+    BR["BR:<br/>Навіщо потрібна<br/>ця можливість?"] --> SR["SR:<br/>Що повинен<br/>гарантувати<br/>компонент?"]
+    SR --> Task["TASK:<br/>Затверджені<br/>межі, залежності,<br/>критерії"]
     Task --> Implementation["Реалізація<br/>та верифікація"]
-    Implementation --> Evidence["Докази виконання<br/>критеріїв та інтеграції"]
-    Evidence --> Summary["Похідні звіти про прогрес<br/>та стан приймання"]
-    Change["Схвалені зміни<br/>намірів"] -.-> Invalidate["Перегляд, оновлення<br/>та повторне схвалення"]
+    Implementation --> Evidence["Докази критеріїв<br/>та інтеграції"]
+    Evidence --> Summary["Похідні звіти<br/>прогресу та<br/>приймання"]
+    Change["Схвалені зміни<br/>намірів"] -.-> Invalidate["Перегляд, оновлення<br/>та повторне<br/>схвалення"]
     Invalidate -.-> SR
     Invalidate -.-> Task
     classDef requirement fill:#dbeafe,stroke:#2563eb,color:#172554
@@ -192,15 +192,15 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    Plan["Підготовка та<br/>схвалення плану"] --> Ready["Ready:<br/>Перевірки пройдено"]
-    Ready --> Execute["In Progress:<br/>Взяття в роботу та реалізація"]
+    Plan["Підготовка та<br/>схвалення плану"] --> Ready["Ready:<br/>перевірки пройдено"]
+    Ready --> Execute["In Progress:<br/>взяття та реалізація"]
     Execute --> Verify["Верифікація<br/>фінальної реалізації"]
-    Verify --> Proposal["Пропозиція локального завершення:<br/>Код і метадані"]
+    Verify --> Proposal["Локальне завершення:<br/>код і метадані"]
     Proposal --> Commit["Успішний авторизований<br/>коміт"]
-    Commit --> Done["Опубліковано Done:<br/>Перевірка сумісності"]
-    Execute --> Blocked["Blocked:<br/>Фіксація доказів і власності"]
+    Commit --> Done["Опубліковано Done:<br/>перевірка сумісності"]
+    Execute --> Blocked["Blocked: збереження<br/>доказів і власності"]
     Verify --> Blocked
-    Blocked --> Resolve["Розв'язання блокерів<br/>і повторна валідація"]
+    Blocked --> Resolve["Розв'язання блокерів<br/>і ревалідація"]
     Resolve --> Ready
     classDef blocked fill:#fef3c7,stroke:#d97706,color:#78350f
     classDef complete fill:#dcfce7,stroke:#16a34a,color:#14532d
@@ -290,11 +290,11 @@ python3 -B tools/validate_protocol.py --artifacts /absolute/path/to/project --fi
 
 ```mermaid
 flowchart TD
-    Base["Порівняльний бейзлайн:<br/>До запропонованих змін"] --> A["Коміт A:<br/>Попередню вимогу завершено"]
-    A --> Execution["Прийнятий бейзлайн виконання:<br/>Опублікована вимога доступна"]
-    Execution --> B["Залежна задача B:<br/>Може виконуватися після перевірок"]
-    Base -.-> History["Порівняння схвалень, блокерів<br/>та історії"]
-    Execution -.-> Dependency["Перевірка публікації,<br/>доступності та сумісності"]
+    Base["Порівняльний бейзлайн:<br/>до запропонованих<br/>змін"] --> A["Коміт A:<br/>попередню вимогу<br/>завершено"]
+    A --> Execution["Прийнятий бейзлайн:<br/>опублікована вимога<br/>доступна"]
+    Execution --> B["Залежна задача B:<br/>виконання після<br/>перевірок"]
+    Base -.-> History["Порівняння схвалень,<br/>блокерів та<br/>історії"]
+    Execution -.-> Dependency["Перевірка публікації,<br/>доступності та<br/>сумісності"]
 ```
 
 ## Гарантії та обмеження

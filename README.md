@@ -148,14 +148,14 @@ The badges above are static version/language labels, not live CI results or a co
 
 ```mermaid
 flowchart LR
-    Agents["Coding agents and developer"] --> Adapters["Tool-specific adapters"]
-    Adapters --> Entry["AGENTS.md:<br/>versioned delegation"]
-    Entry --> Specs["Full protocol specifications"]
-    Specs --> Context["Memory Bank:<br/>architecture, stack, decisions"]
-    Specs --> Work["PLAN or TASK:<br/>approval, scope, evidence, handoff"]
-    Context --> Session["Focused implementation session"]
+    Agents["Coding agents<br/>and developer"] --> Adapters["Tool-specific<br/>adapters"]
+    Adapters --> Entry["AGENTS.md:<br/>versioned<br/>delegation"]
+    Entry --> Specs["Full protocol<br/>specifications"]
+    Specs --> Context["Memory Bank:<br/>architecture,<br/>stack, decisions"]
+    Specs --> Work["PLAN or TASK:<br/>approval, scope,<br/>evidence, handoff"]
+    Context --> Session["Focused<br/>session"]
     Work --> Session
-    Session --> Update["Verify and record outcomes"]
+    Session --> Update["Verify and<br/>record outcomes"]
     Update --> Context
     Update --> Work
     classDef knowledge fill:#dbeafe,stroke:#2563eb,color:#172554
@@ -172,12 +172,12 @@ The optional **Context Dependency Inversion Principle (CDIP)** extension adds a 
 
 ```mermaid
 flowchart TD
-    BR["BR:<br/>Why does this capability matter?"] --> SR["SR:<br/>What must the component guarantee?"]
-    SR --> Task["TASK:<br/>Approved scope, dependencies,<br/>and acceptance mapping"]
+    BR["BR:<br/>Why does this<br/>capability<br/>matter?"] --> SR["SR:<br/>What must the<br/>component<br/>guarantee?"]
+    SR --> Task["TASK:<br/>Approved scope,<br/>dependencies,<br/>acceptance<br/>mapping"]
     Task --> Implementation["Implementation<br/>and verification"]
-    Implementation --> Evidence["Criterion and<br/>integration evidence"]
-    Evidence --> Summary["Derived progress and<br/>acceptance views"]
-    Change["Approved intent<br/>changes"] -.-> Invalidate["Review, revise, and<br/>reapprove affected work"]
+    Implementation --> Evidence["Criterion and<br/>integration<br/>evidence"]
+    Evidence --> Summary["Derived progress<br/>and acceptance<br/>views"]
+    Change["Approved intent<br/>changes"] -.-> Invalidate["Review, revise,<br/>and reapprove<br/>affected work"]
     Invalidate -.-> SR
     Invalidate -.-> Task
     classDef requirement fill:#dbeafe,stroke:#2563eb,color:#172554
@@ -192,15 +192,15 @@ Approvals bind to specific revisions. Historical completion stays historical: im
 
 ```mermaid
 flowchart TD
-    Plan["Prepare and<br/>approve plan"] --> Ready["Ready:<br/>Guards pass"]
-    Ready --> Execute["In Progress:<br/>Claim and implement"]
+    Plan["Prepare and<br/>approve plan"] --> Ready["Ready:<br/>guards pass"]
+    Ready --> Execute["In Progress:<br/>claim and implement"]
     Execute --> Verify["Verify final<br/>implementation"]
-    Verify --> Proposal["Local completion proposal:<br/>Review code and metadata"]
+    Verify --> Proposal["Local completion<br/>proposal: review<br/>code and metadata"]
     Proposal --> Commit["Authorized commit<br/>succeeds"]
-    Commit --> Done["Published Done:<br/>Check integration & compatibility"]
-    Execute --> Blocked["Blocked:<br/>Preserve evidence & ownership"]
+    Commit --> Done["Published Done:<br/>check integration<br/>and compatibility"]
+    Execute --> Blocked["Blocked: preserve<br/>evidence and<br/>ownership"]
     Verify --> Blocked
-    Blocked --> Resolve["Resolve blockers and<br/>revalidate approvals"]
+    Blocked --> Resolve["Resolve blockers<br/>and revalidate<br/>approvals"]
     Resolve --> Ready
     classDef blocked fill:#fef3c7,stroke:#d97706,color:#78350f
     classDef complete fill:#dcfce7,stroke:#16a34a,color:#14532d
@@ -290,11 +290,11 @@ python3 -B tools/validate_protocol.py --artifacts /absolute/path/to/project --fi
 
 ```mermaid
 flowchart TD
-    Base["Comparison baseline:<br/>Before proposed changes"] --> A["Commit A:<br/>Prerequisite completed"]
-    A --> Execution["Accepted execution baseline:<br/>Published prerequisite available"]
-    Execution --> B["Dependent task B:<br/>May proceed if all guards pass"]
-    Base -.-> History["Compare approvals, blockers,<br/>and terminal history"]
-    Execution -.-> Dependency["Check publication, availability,<br/>and compatibility evidence"]
+    Base["Comparison baseline:<br/>before proposed<br/>changes"] --> A["Commit A:<br/>prerequisite<br/>completed"]
+    A --> Execution["Accepted execution<br/>baseline: published<br/>prerequisite<br/>available"]
+    Execution --> B["Dependent task B:<br/>proceed if all<br/>guards pass"]
+    Base -.-> History["Compare approvals,<br/>blockers, and<br/>terminal history"]
+    Execution -.-> Dependency["Check publication,<br/>availability, and<br/>compatibility"]
 ```
 
 For a committed PR, compare against its agreed pre-change base—not the PR's final state. A prerequisite can be completed after that comparison base and still be available in the execution baseline. The validator checks ancestry and records; it cannot decide which commit your team has accepted.
