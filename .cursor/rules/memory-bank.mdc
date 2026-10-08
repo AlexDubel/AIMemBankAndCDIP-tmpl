@@ -1,0 +1,5 @@
+---
+description: Shared Memory Bank protocol
+alwaysApply: true
+---
+Read and follow `AGENTS.md` in the repository root. It is the canonical protocol for this project.
